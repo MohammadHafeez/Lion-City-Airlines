@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.FlightSchedule>
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container schedule-edit">
+    <div>
+        @if (Model.ToList().Count != 0)
+        {
+            <div class="table-responsive" style="margin-top: 35px;">
+                <table id="viewStaff" class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ScheduleID</th>
+                            <th>FlightNumber</th>
+                            <th>RouteID</th>
+                            <th>AirCraftID</th>
+                            <th>Departure Date/Time</th>
+                            <th>Arrival Date/Time</th>
+                            <th>Status</th>
+                            <th>No. of bookings</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                            <tr>
+                                <td>@i.ScheduleId</td>
+                                <td>@i.FlightNumber</td>
+                                <td>@i.RouteId</td>
+                                <td>@i.AircraftId</td>
+                                <td>@i.DepartureDateTime</td>
+                                <td>@i.ArrivalDateTime</td>
+                                @{
+                                    if (i.Status == "Opened")
+                                    {
+                                        <td style="color: #09BC8A;">@i.Status</td>
+                                    }
+                                    else if (i.Status == "Cancelled")
+                                    {
+                                        <td class="text-danger">@i.Status</td>
+                                    }
+                                    else if (i.Status == "Delayed")
+                                    {
+                                        <td class="text-warning">@i.Status</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@i.Status</td>
+                                    }
+                                }
+                                <td>@i.BookingAmt</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+    <h4>Update Schedule Status</h4>
+    <hr />
+    <form action="~/FlightSchedule/Edit" method="post" style="background-color: white; padding: 15px;">
+        <div class="row row-1 justify-content-center">
+            <div class="form-group col-9 col-md-4">
+                <label style="color: #164e87" for="ScheduleId" class="control-label">Schedule Id:</label>
+                <select name="ScheduleId" asp-items="@ViewData["scheduleIds"] as List<SelectListItem>" class="form-control"></select>
+            </div>
+        </div>
+        <div class="row row-2 justify-content-between">
+            <div class="form-group col-12">
+                <label class="label" for="status">Select New Status:</label>
+                <div class="row justify-content-center">
+                    @foreach (var s in ViewData["Status"] as List<string>)
+                    {
+                        <label class="col-12 col-sm-3" style="max-width: 135px;">
+                            <input name="Status" type="radio" value="@s" class="form-check-input" />
+                            <span>@s</span>
+                        </label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row row-3 justify-content-center" style="margin-top: 35px;">
+            <div>
+                <input type="submit" value="Edit" class="btn btn-dark" />
+            </div>
+        </div>
+        <p style="color: #09BC8A; text-align: center; margin-top: 10px;">@TempData["StatusEditSuccuess"]</p>
+    </form>
+    <a href="~/Admin/Index">Back to Main Page</a>
+</div>

@@ -1,0 +1,60 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.Staff
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h4>Change Staff Status</h4>
+<hr />
+<div style="display: flex; justify-content: center;" class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StaffID" class="control-label"></label>
+                <input asp-for="StaffID" readonly class="form-control" />
+                <span asp-validation-for="StaffID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StaffName" class="control-label"></label>
+                <input asp-for="StaffName" readonly class="form-control" />
+                <span asp-validation-for="StaffName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" readonly class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateEmployed" class="control-label"></label>
+                <input asp-for="DateEmployed" readonly class="form-control" />
+                <span asp-validation-for="DateEmployed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vocation" class="control-label"></label>
+                <input asp-for="Vocation" readonly class="form-control" />
+                <span asp-validation-for="Vocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddr" class="control-label"></label>
+                <input asp-for="EmailAddr" readonly class="form-control" />
+                <span asp-validation-for="EmailAddr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select id="Status" name="Status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Update status for another staff</a>
+</div>
+

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.Booking>
+
+@{
+    ViewData["Title"] = "Booking History";
+}
+
+<h4>Booking History</h4>
+<p style="text-align:center">click on your booking to view details!</p>
+<partial name="~/Views/ViewBookings/_ViewBookingHistory.cshtml" model="@Model" />

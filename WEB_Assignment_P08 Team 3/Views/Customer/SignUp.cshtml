@@ -1,0 +1,51 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.Customer
+
+@{
+    ViewData["Title"] = "SignUp";
+}
+
+<h4>Sign Up</h4>
+
+<div style="display: flex; justify-content: center;" class="row">
+    <div class="col-md-4">
+        <form asp-action="SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nationality" class="control-label"></label>
+                <input asp-for="Nationality" class="form-control" />
+                <span asp-validation-for="Nationality" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelNo" class="control-label"></label>
+                <input asp-for="TelNo" class="form-control" />
+                <span asp-validation-for="TelNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailAddr" class="control-label"></label>
+                <input asp-for="EmailAddr" class="form-control" />
+                <span asp-validation-for="EmailAddr" class="text-danger"></span>
+                <span style="color:red;font-size:15px">@TempData["Message"]</span>
+            </div>
+            <input asp-for="Password" type="hidden" readonly />
+            <div style="text-align:center">
+                <h5>Your Assigned Password is p@55Cust</h5>
+                <text style="color:#707070;font-size:15px">You can change this password later on.</text>
+            </div>
+            <div style="text-align: center; margin-top: 40px;" class="form-group">
+                <input type="submit" value="Enter" class="btn btn-dark" />
+            </div>
+            
+        </form>
+    </div>
+</div>
+

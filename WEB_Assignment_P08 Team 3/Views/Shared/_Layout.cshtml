@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lion City Airlines</title>
+    <link rel="scriptsheet" href="~/js/site.js" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        @{
+            if (Context.Session.GetString("Role") == "Admin")
+            {
+                <partial name="~/Views/Admin/_AdminMenu.cshtml" model="@Model" />
+            }
+            else if (Context.Session.GetString("Role") == "Customer")
+            {
+                <partial name="~/Views/Shared/_CustomerMenu.cshtml" model="@Model" />
+            }
+            else if (Context.Session.GetString("Role") == "Guest")
+            {
+                <partial name="~/Views/Shared/_HomeMenu.cshtml" model="@Model" />
+            }
+        }
+    </header>
+    @RenderBody()
+    <footer class="border-top small text-right text-muted">
+        <p style="padding-right:15px; padding-top: 5px">&copy;Lion City Airlines @DateTime.Today.Year</p>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

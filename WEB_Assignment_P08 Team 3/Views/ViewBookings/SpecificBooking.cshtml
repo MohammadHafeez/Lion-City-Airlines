@@ -1,0 +1,57 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.Booking
+
+@{
+    ViewData["Title"] = "Booking";
+}
+
+<div style="display: flex; justify-content: left;">
+    <a href="~/ViewBookings/BookingHistory">Back to History</a>
+</div>
+<body>
+    <fieldset class="myCustomFieldset">
+        <h4 style="text-align: center; margin-top: 25px;">Booking ID: @Model.BookingID</h4>
+        <div style="margin: 40px 0 0 70px; display: flex; justify-content: center;">
+            <div style="padding-right: 50px;">
+                <div style="text-align: left;">
+                    <label style="width: 150px;"><b>Customer ID:</b></label>
+                    <span>@Model.CustID</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>Passenger Name</b></label>
+                    <span>@Model.PassengerName</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>Passport Number:</b></label>
+                    <span>@Model.PassportNo</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>Nationality:</b></label>
+                    <span>@Model.Nationality</span>
+                </div>
+            </div>
+            <div style="padding-left: 50px; padding-right: 30px;">
+                <div style="text-align: left;">
+                    <label style="width: 150px;"><b>Schedule ID:</b></label>
+                    <span>@Model.ScheduleID</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>Seat Class:</b></label>
+                    <span>@Model.SeatClass</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>Amount Payable:</b></label>
+                    <span>$@Model.AmtPayable</span>
+                </div>
+                <div style="margin-top: 20px; text-align: left;">
+                    <label style="width: 150px;"><b>DateBooked</b></label>
+                    <span>@Model.DateTimeCreated</span>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <label><b>Remarks</b></label>
+            <p>@Model.Remark</p>
+        </div>
+    </fieldset>
+</body>
+

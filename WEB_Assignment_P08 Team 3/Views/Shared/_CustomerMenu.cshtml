@@ -1,0 +1,21 @@
+﻿@*Navigation bar for Customer menu*@
+<nav class="navbar navbar-expand-md navbar-custom">
+    <div class="container-fluid">
+        <a href="~/Customer/CustMain"><img src="~/images/Logo.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#custNavBar">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="collapse navbar-collapse" id="custNavBar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="~/FlightBooking/ChooseFlight">Make a Booking</a></li>
+                <li class="nav-item"><a class="nav-link" href="~/ViewBookings/BookingHistory">View Bookings</a></li>
+                <li class="nav-item"><a class="nav-link" href="~/Customer/ChangePassword">Change Password</a></li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="~/Customer/LogOut">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

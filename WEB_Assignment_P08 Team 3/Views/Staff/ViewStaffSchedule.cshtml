@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.FlightSchedule>;
+
+@if (Model.ToList().Count != 0)
+{
+    <h3 style="font-family:'Segoe UI'">Flight Schedule of @TempData["StaffName"]</h3>
+    <div class="table-responsive" style="margin-top: 35px;">
+        <table id="viewStaff" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ScheduleID</th>
+                    <th>FlightNumber</th>
+                    <th>RouteID</th>
+                    <th>AirCraftID</th>
+                    <th>Departure Date/Time</th>
+                    <th>Arrival Date/Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.ScheduleId</td>
+                        <td>@i.FlightNumber</td>
+                        <td>@i.RouteId</td>
+                        <td>@i.AircraftId</td>
+                        <td>@i.DepartureDateTime</td>
+                        <td>@i.ArrivalDateTime</td>
+                        <td>@i.Status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}
+<div>
+    <a asp-action="Index">View another schedule.</a>
+</div>

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Assign";
+}
+
+<h1 style="text-align:center; font-family:'Segoe UI'">Assign Flight Crew</h1>
+<div>
+    <h5 style="color:red;">@TempData["ErrorMessage"]</h5>
+    <h5 style="color:green;">@TempData["SuccessMessage"]</h5>
+</div>
+<partial name="~/Views/Staff/_AssignStaffSchedule.cshtml" model="@Model" />
+

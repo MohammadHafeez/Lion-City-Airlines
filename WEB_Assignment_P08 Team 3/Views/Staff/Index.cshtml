@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "View All Flight Personnel";
+}
+<h5 style="color:red;">@TempData["ErrorMessage"]</h5>
+<h5 style="color:green;">@TempData["SuccessMessage"]</h5>
+<h1 style="text-align:center; font-family:'Segoe UI'">View All Flight Personnel</h1>
+<div style="margin-top: 35px;">
+    <div style="display: flex; justify-content:space-between; margin-top: 35px;">
+        <div>
+            <a class="btn btn-dark" style="margin-left: 1750px;" href="~/Staff/Create">Add New Staff</a>
+        </div>
+    </div>
+    <partial name="~/Views/Staff/_ViewStaff.cshtml" model="@Model" />
+</div>
+
+

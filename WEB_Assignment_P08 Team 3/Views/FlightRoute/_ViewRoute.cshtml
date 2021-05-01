@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.FlightRoute>;
+
+@if (Model.ToList().Count != 0)
+{
+    <div class="table-responsive" style="margin-top: 35px;">
+        <table id="viewStaff" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Route Id</th>
+                    <th>Departure City</th>
+                    <th>Departure Country</th>
+                    <th>Arrival City</th>
+                    <th>Arrival Country</th>
+                    <th>Flight Duration</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.RouteId</td>
+                        <td>@i.DepartureCity</td>
+                        <td>@i.DepartureCountry</td>
+                        <td>@i.ArrivalCity</td>
+                        <td>@i.ArrivalCountry</td>
+                        <td>@i.FlightDuration</td>
+                        <td><a class="btn btn-dark" asp-action="Details" asp-controller="FlightRoute" asp-route-id="@i.RouteId" >View</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}

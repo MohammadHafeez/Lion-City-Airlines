@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container-fluid login-container">
+    <div>
+        <div style="text-align: center;">
+            <p>
+                <img id="imgLogo" src="~/images/Logo.png" style="height:25%;width:25%" />
+            </p>
+        </div>
+    </div>
+    <div>
+        <div style="text-align: center;">
+            <form method="post" action="~/Home/Login">
+                <div>
+                    <label for="txtLoginID" class="col-sm-2 col-form-label">Email:</label>
+                    <input style="max-width: 250px" type="email" name="txtLoginID" id="txtLoginID" class="col-sm-3" /><br />
+                </div>
+                <br /><br />
+                <div>
+                    <label for="txtPassword" class="col-sm-2 col-form-label">Password:</label>
+                    <input style="max-width: 250px" type="password" name="txtPassword" id="txtPassword" class="col-sm-3" required autocomplete="off" />
+                </div>
+                <br /><br />
+                <div>
+                    <input type="submit" id="btnLogin" class="myButton" value="Login" />
+                </div>
+            </form>
+            <br />
+            <a href="~/Customer/SignUp">Don't have an account? Sign up here</a>
+            <br /><br /><br />
+        </div>
+        <p class="text-danger" style="text-align:center">@TempData["Message"]</p>
+        <p class="text-danger" style="text-align:center">@TempData["UserError"]</p>
+    </div>
+</div>

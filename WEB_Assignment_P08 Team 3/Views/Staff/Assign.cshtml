@@ -1,0 +1,64 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.FlightPersonnelViewModel
+
+@{
+    ViewData["Title"] = "Assign";
+}
+
+<h1 style="text-align:center; font-family:'Segoe UI'">Assign Flight Personnel</h1>
+
+<hr />
+<div class="row" style="margin:auto;width:800px">
+    <div class="col-md-4">
+        <form asp-action="Assign">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.scheduleVM.ScheduleId" class="control-label"></label>
+                <input asp-for="@Model.scheduleVM.ScheduleId" class="form-control" readonly />
+                <span asp-validation-for="@Model.scheduleVM.ScheduleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.scheduleVM.FlightNumber" class="control-label"></label>
+                <input asp-for="@Model.scheduleVM.FlightNumber" class="form-control" readonly />
+                <span asp-validation-for="@Model.scheduleVM.FlightNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.scheduleVM.DepartureDateTime" class="control-label"></label>
+                <input asp-for="@Model.scheduleVM.DepartureDateTime" class="form-control" readonly />
+                <span asp-validation-for="@Model.scheduleVM.DepartureDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.scheduleVM.DepartureCity" class="control-label"></label>
+                <input asp-for="@Model.scheduleVM.DepartureCity" class="form-control" readonly />
+                <span asp-validation-for="@Model.scheduleVM.DepartureCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.scheduleVM.ArrivalCity" class="control-label"></label>
+                <input asp-for="@Model.scheduleVM.ArrivalCity" class="form-control" readonly />
+                <span asp-validation-for="@Model.scheduleVM.ArrivalCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.crew.Role"></label>
+                <select asp-for="@Model.crew.Role"
+                        asp-items="@ViewData["roleList"] as List<SelectListItem>">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.crew.StaffID"></label>
+                <select asp-for="@Model.crew.StaffID"
+                        asp-items="@ViewData["availStaffList"] as List<SelectListItem>">
+                </select>
+            </div>
+            <div>
+                <h5 style="color:red;">@TempData["ErrorMessage"]</h5>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Assign" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="DisplaySchedule">View Flight Schedules</a>
+</div>
+

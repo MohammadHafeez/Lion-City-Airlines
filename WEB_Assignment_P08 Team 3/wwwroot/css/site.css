@@ -1,0 +1,629 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- home/customer menu styling --- */
+.navbar-custom {
+    background-color: #FCFFF7;
+    border-bottom: 2px solid #21A0A0;
+}
+
+    .navbar-custom ul li {
+        text-align: center;
+        border-top: 1px solid #21A0A0;
+        list-style: none;
+    }
+
+        .navbar-custom ul li a {
+            color: #21A0A0;
+            padding: 3px 10px 0 10px;
+            text-decoration: none;
+        }
+
+    .navbar-custom a img {
+        width: 125px;
+    }
+
+    .navbar-custom button div {
+        width: 25px;
+        height: 5px;
+        background-color: #21A0A0;
+        margin: 5px 0;
+    }
+/* -x- home menu styling -x- */
+
+/* --- admin menu styling --- */
+.navbar-admin .menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    width: 100%;
+}
+
+.navbar-admin .menu-top a img{
+    width: 90px;
+}
+
+.navbar-admin .menu-top button {
+    font-size: 20px;
+    color: #046865;
+    border: 1px solid #046865;
+    padding: 7px 13px;
+}
+
+.navbar-admin .menu-btm li {
+    text-align: right;
+    border-top: 1px solid #21A0A0;
+    padding: 5px 0;
+}
+
+.navbar-admin .menu-btm li a{
+    font-size: 16px;
+}
+/* -x- admin menu styling -x- */
+
+/* --- ~/Home/Index page styling --- */
+.homepage-container {
+    padding: 0 25px;
+}
+
+    .homepage-container .row-1 {
+        margin-top: 50px;
+    }
+
+        .homepage-container .row-1 h2 {
+            font-size: 20px;
+            color: #21A0A0;
+        }
+
+    .homepage-container .row-2 p {
+        color: #164e87;
+        font-size: 13px;
+    }
+
+    .homepage-container .row-3 {
+        background-color: #e7f3f5;
+    }
+
+        .homepage-container .row-3 h2 {
+            font-size: 20px;
+            color: #21A0A0;
+            padding-top: 21px;
+        }
+
+            .homepage-container .row-3 .row .card {
+                margin: 10px 15px;
+                max-width: 550px;
+                min-width: 300px;
+            }
+
+        .homepage-container .row-3 .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        .homepage-container .row-3 .card .price {
+            padding-left: 15px;
+            border-left: 3px solid #ff9f00;
+            color: #21A0A0;
+        }
+
+/* -x- ~/Home/Index page styling -x- */
+
+/* --- ~/Home/Login page styles --- */
+.myButton {
+    border: 0.5px solid #707070;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #D9EDFF;
+    color: #164E87;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none
+}
+/* -x- ~/Home/Login page styles -x- */
+
+/* --- ~/Home/Announcements ---  */
+.announcement-container .row {
+    margin-top: 15px;
+    padding-top: 15px;
+    background-color: #21A0A0;
+}
+
+.announcement-container .row .carousel-item p {
+    margin-top: 10px;
+    background-color: #e7f3f5;
+    color: #164e87;
+    padding: 15px 15px 20px 15px;
+}
+/* -x- ~/Home/Announcements -x-  */
+
+/* --- ~/Home/About page styles --- */
+.about-container{
+    padding: 25px;
+}
+
+.about-container .row .image-box img{
+    width: 225px;
+}
+
+.about-container .row .text-box{
+    margin-top: 15px;
+}
+
+.about-container .row .text-box h5 {
+    text-align: right;
+    border-right: 3px solid #21A0A0;
+    padding-right: 10px;
+    color: #164e87;
+    font-size: 20px;
+}
+
+.about-container .row .text-box p{
+    background-color: #21A0A0;
+    padding: 25px;
+    color: #FCFFF7;
+}
+/* -x- ~/Home/About page styles -x- */
+
+/* --- ~/Home/API page styling --- */
+.home-api{
+    padding: 0 25px;
+    margin-top: 25px;
+}
+
+.home-api h2{
+    text-align: center;
+    font-size: 25px;
+    color: #164e87;
+    font-weight: bold;
+}
+
+.home-api .wrapper{
+    margin-top: 25px;
+}
+
+.home-api div div h5{
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: left;
+    color: #164e87;
+}
+
+.home-api .row{
+    padding: 0;
+    margin: 0;
+}
+
+.home-api .row-1 div {
+    background-color: #808080;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 8px;
+}
+
+.home-api .wrapper p,b {
+    margin: 0;
+    padding: 0;
+}
+
+.home-api .row-1 p {
+    font-size: 18px;
+    color: #FCFFF7;
+}
+
+.home-api .wrapper .countries h3{
+    font-size: 18px;
+    color: #164e87;
+    font-weight: bold;
+}
+
+.home-api .wrapper .countries .inner .box{
+    background-color: #808080;
+}
+
+.home-api .wrapper .countries .inner .inner-box {
+    background-color: #FCFFF7;
+    padding: 10px;
+    margin: 10px;
+}
+/* -x- ~/Home/API page styling -x- */
+
+/* --- ~/Admin/Index page styling --- */
+.admin-index{
+    background-color: white;
+    padding-bottom: 25px;
+}
+
+.admin-index h2{
+    text-align: center;
+    font-size: 25px;
+    color: #164e87;
+    padding-top: 20px;
+}
+
+.admin-index .row-1{
+    padding: 0;
+    margin: 0;
+
+}
+
+.admin-index .row-1 div {
+    background-color: #e7f3f5;
+    padding: 10px;
+    margin: 15px 15px 0 15px;
+    text-align: center;
+}
+
+.admin-index .row-1 img{
+    height: 150px;
+}
+
+.admin-index .row-1 h3 {
+    color: #164e87;
+    font-size: 18px;
+    padding-top: 25px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.admin-index .row-1 .col-12 div {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-index .row-1 div ol li{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.admin-index .row-1 div ol li a {
+    font-size: 15px;
+}
+/* -x- ~/Admin/Index page styling -x- */
+
+/* --- ~/FlightRoute/Index styling --- */
+.route-index {
+    margin-top: 25px;
+}
+
+.route-index div{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.route-index div h2 {
+    color: #046865;
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.route-index div a {
+    font-size: 14px;
+    margin-left: 5px;
+}
+/* -x- ~/FlightRoute/Index styling -x- */
+
+/* --- ~/FlighRoute.Details styling --- */
+.route-details h4{
+    font-size: 18px;
+}
+
+.route-details .label{
+    color: #164e87;
+    font-weight: bold;
+}
+
+.route-details .value{
+    color: #046865;
+}
+
+.route-details .row-4{
+    margin-top: 25px;
+    background-color: #e7f3f5;
+    padding: 10px;
+}
+
+.route-details .row-4 .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* -x- ~/FlighRoute.Details styling -x- */
+
+/* --- ~/FlightRoute/Create Styling --- */
+.route-create{
+    background-color: #e7f3f5;
+    padding: 15px;
+}
+
+.route-create .row{
+    margin: 0;
+    padding: 0;
+}
+/* -x- ~/FlightRoute/Create Styling -x- */
+
+/* --- ~/FlightSchedule/Create --- */
+.schedule-create {
+    background-color: #e7f3f5;
+    padding: 15px;
+}
+
+.schedule-create .row{
+    padding: 0;
+    margin: 0;
+}
+/* -x- ~/FlightSchedule/Create -x- */
+
+/* --- ~/FlightSchedule/Create --- */
+.schedule-edit {
+    background-color: #e7f3f5;
+    padding: 15px;
+}
+
+.schedule-edit .row {
+    padding: 0;
+    margin: 0;
+}
+
+.schedule-edit .row-2 .label {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    color: #164e87;
+}
+/* -x- ~/FlightSchedule/Create -x- */
+
+/* --- Media queries --- */
+@media screen and (min-width: 576px) {
+    .homepage-container .row-1 h2 {
+        font-size: 31px;
+        color: #21A0A0;
+    }
+
+    .homepage-container .row-3 h2 {
+        font-size: 31px;
+    }
+
+    .navbar-admin .menu-top a img {
+        width: 125px;
+    }
+
+    .navbar-admin .menu-btm li {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* home menu styling */
+    .navbar-custom ul li {
+        border-top: none;
+    }
+
+    .navbar-custom ul li a {
+        color: #21A0A0;
+        padding: 0 15px;
+    }
+
+    .row-2, .row-1 {
+        padding-left: 100px;
+    }
+
+    .homepage-container .row-2 p {
+        font-size: 20px;
+    }
+
+    .route-index div h2 {
+        font-size: 25px;
+    }
+
+    .route-index div a {
+        font-size: 20px;
+    }
+
+    .admin-index .row-1 h3 {
+        font-size: 25px;
+    }
+
+    .admin-index .row-1 div ol li a {
+        font-size: 20px;
+    }
+
+    .home-api .wrapper{
+        display: flex;
+        align-items: center;
+    }
+
+    .home-api .wrapper .today{
+        max-width: 250px;
+    }
+
+    .home-api .row-1 div {
+        padding: 15px;
+    }
+
+    .home-api .countries {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .home-api .countries h3 {
+        text-align: center;
+        font-size: 31px;
+    }
+
+    .home-api .wrapper .countries {
+        padding: 15px;
+    }
+
+    .home-api .wrapper .countries .infected h3 {
+        font-size: 25px;
+        color: #164e87;
+        font-weight: bold;
+    }
+
+    .home-api .countries .inner h3{
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .about-container .row .text-box h5 {
+        font-size: 31px;
+    }
+
+    .about-container .row .text-box p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+}
+/* -x- Media queries -x- */
+
+/*System style sheet*/
+.PageTitle {
+    text-align: center;
+    font-weight: bold;
+    color: #164E87;
+}
+
+h1 {
+    color: #164E87;
+}
+
+h4 {
+    text-align: center;
+    color: #164E87;
+    padding-top:20px;
+}
+
+
+.myContainerCustom {
+    display: inline-block;
+    text-align: center;
+    background-color: white;
+    height: 200px;
+    width: 350px;
+    color: #164E87;
+    font-family: 'Segoe UI';
+    border-radius: 5px;
+    border-color: #707070;
+    border-width: 5px;
+    padding-left: 50px;
+    padding-right: 30px;
+    margin: 10px;
+}
+
+.FormContent {
+    padding: 10px;
+    margin: auto;
+    width: 95%;
+}
+
+.col-form-label {
+    text-align: left;
+    font-weight: bold;
+}
+
+#mainContainer {
+    border: 1px solid #000000;
+    margin: auto;
+    width: 80%;
+    padding: 4px;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 10px;
+    width: 600px;
+    background-color: white;
+    text-align: center;
+    color: #164E87;
+    font-family: 'Segoe UI';
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.myCustomFieldset {
+
+    padding: 10px;
+    width:100%;
+    background-color: white;
+    text-align: center;
+    color: #164E87;
+    font-family: 'Segoe UI';
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom:20px;
+    border-radius:0;
+}
+    fieldset legend {
+        padding: 4px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #164E87;
+        width: auto;
+        text-decoration: underline;
+    }
+
+label {
+    width: 240px;
+    display: inline-block;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+.myButton {
+    border: 0.5px solid #707070;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #D9EDFF;
+    color: #164E87;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none
+}
+
+ img {
+    width: 50%;
+    height: auto;
+}
+
+body {
+    background-color: #e7f3f5;
+}
+
+@media screen and (max-width: 918px) {
+    .loginFieldset {
+        min-height: 0px;
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .loginFieldset {
+        min-height: 0px;
+        width: 95%;
+    }
+
+    #mainContainer {
+        padding: 0;
+        border: none;
+    }
+}

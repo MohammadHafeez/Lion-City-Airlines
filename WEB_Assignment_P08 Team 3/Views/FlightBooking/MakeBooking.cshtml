@@ -1,0 +1,87 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.BookingModel
+
+@{
+    ViewData["Title"] = "Make Booking";
+
+}
+
+<h4>Make a Booking</h4>
+<hr />
+<form class="FormContent" asp-action="MakeBooking">
+    @for (int i = 0; i < Model.Amount; i++)
+    {
+        <header style="background-color:#21A0A0;color:white;text-decoration:solid;text-align:center">Passenger @(i+1)</header>
+        <div style="justify-content:center">
+            <fieldset class="myCustomFieldset">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].ScheduleID" class="col-sm-3 col-form-label" style="display:inline-block">
+                    </label>
+                    <div style="display:inline-block">
+                        <input asp-for="NewBookings[i].ScheduleID" size="50" style="display:inline-block;width:405px" readonly />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].CustID" class="col-sm-3 col-form-label" style="display:inline-block">
+                    </label>
+                    <div style="display:inline-block">
+                        <input asp-for="NewBookings[i].CustID"  size="50" style="display:inline-block;width:405px" readonly />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].PassengerName" class="col-sm-3 col-form-label">
+                    </label>
+                    <input asp-for="NewBookings[i].PassengerName" size="50" width="20" /><br />
+                    <span asp-validation-for="NewBookings[i].PassengerName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].PassportNo" class="col-sm-3 col-form-label">
+                    </label>
+                    <input asp-for="NewBookings[i].PassportNo" size="50" width="20" /><br />
+                    <span asp-validation-for="NewBookings[i].PassportNo" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].Nationality" class="col-sm-3 col-form-label" style="display:inline-block">
+                    </label>
+                    <input asp-for="NewBookings[i].Nationality" size="50" width="20" /><br />
+                    <span asp-validation-for="NewBookings[i].Nationality" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].SeatClass" class="col-sm-3 col-form-label" style="display:inline-block"></label>
+                    <select asp-for="NewBookings[i].SeatClass" asp-items="@ViewData["SeatClass"]as List<SelectListItem>" style="display:inline-block;width:405px"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewBookings[i].Remark" class="col-sm-3 col-form-label" style="display:inline-block">
+                    </label>
+                    <div style="display:inline-block">
+                        <textarea asp-for="NewBookings[i].Remark" id="NewsDesc" rows="4" cols="50" maxlength="3000" class="col-auto">
+                </textarea>
+                    </div>
+                </div>
+                <div>
+                    <input type="hidden" asp-for="NewBookings[i].DateTimeCreated" value="@DateTime.Now" style="outline:none" readonly />
+                </div>
+            </fieldset>
+
+        </div>
+    }
+
+    <div>
+        <input type="hidden" asp-for="Amount" value="@Model.Amount" style="outline:none" readonly />
+    </div>
+    <div style="text-align: center;">
+        <div>
+            <input type="submit" class="myButton" value="Book Flight"/>
+        </div>
+    </div>
+
+</form>
+   
+
+<div>
+    <a asp-action="ChooseFlight">Back to selection</a>
+</div>
+
+

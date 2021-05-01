@@ -1,0 +1,58 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.FlightSchedule
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container schedule-create" style="margin-top: 25px;">
+    <h4>Create Flight Route</h4>
+    <hr />
+    <form asp-action="Create">
+        <div class="row row-1 justify-content-center">
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="RouteId" class="control-label"></label>
+                <select asp-for="RouteId" asp-items="@ViewData["routeIds"] as List<SelectListItem>" class="form-control"></select>
+                <span asp-validation-for="RouteId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="AircraftId" class="control-label"></label>
+                <select asp-for="RouteId" asp-items="@ViewData["aircraftIds"] as List<SelectListItem>" class="form-control"></select>
+                <span asp-validation-for="AircraftId" class="text-danger"></span>
+            </div>
+        </div>
+        <hr />
+        <div class="row row-2 justify-content-center">
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="FlightNumber" class="control-label"></label>
+                <input asp-for="FlightNumber" class="form-control" required />
+                <span asp-validation-for="FlightNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="DepartureDateTime" class="control-label"></label>
+                <input asp-for="DepartureDateTime" class="form-control" />
+                <p class="text-danger">@TempData["Later"]</p>
+                <span asp-validation-for="DepartureDateTime" class="text-danger"></span>
+            </div>
+        </div>
+        <hr />
+        <div class="row row-3 justify-content-center">
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="EconomyClassPrice" class="control-label"></label>
+                <input asp-for="EconomyClassPrice" class="form-control" required />
+                <span asp-validation-for="EconomyClassPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group col-9 col-md-4">
+                <label asp-for="BusinessClassPrice" class="control-label"></label>
+                <input asp-for="BusinessClassPrice" class="form-control" required />
+                <span asp-validation-for="BusinessClassPrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row row-3 justify-content-center" style="margin-top: 35px;">
+            <div>
+                <input type="submit" value="Create" class="btn btn-dark" />
+            </div>
+        </div>
+    </form>
+    <a href="~/Admin/Index">Back to Main Page</a>
+</div>

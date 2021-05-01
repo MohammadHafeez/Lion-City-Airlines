@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<nav class="navbar navbar-custom navbar-admin">
+    <div class="menu-top" style="">
+        <a class="navbar-brand" href="~/Admin/Index">
+            <img id="imgLogo" src="~/images/Logo.png" />
+        </a>
+         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#homeNavBar">
+            MENU
+         </button>
+    </div>
+    <div class="collapse navbar-collapse menu-btm" id="homeNavBar">
+        <ul class="navbar-nav" style="text-align: center;">
+            <li><a href="~/FlightRoute/Index">View Flight Route & Schedules</a></li>
+            <li><a href="~/FlightRoute/Create">Create Flight Route</a></li>
+            <li><a href="~/FlightSchedule/Create">Create Flight Schedule</a></li>
+            <li><a href="~/FlightSchedule/Edit">Update Flight Schedule</a></li>
+            <li><a asp-controller="Staff" asp-action="Index">View Flight Personnel Schedule</a></li>
+            <li><a asp-controller="Staff" asp-action="Create">Add New Flight Personnel</a></li>
+            <li><a href="~/Staff/DisplaySchedule">Assign Flight Personnel</a></li>
+            <li><a asp-controller="Staff" asp-action="Index">Change Flight Personnel Status</a></li>
+            <li><a href="~/Admin/LogOut">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+
+

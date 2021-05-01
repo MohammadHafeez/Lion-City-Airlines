@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Making a Booking";
+}
+
+
+<div style="display: flex; justify-content: left;">
+    <a href="~/FlightBooking/ChooseFlight">Back to Schedules</a>
+</div>
+<h4>Make a Booking</h4>
+<div style="display: flex; justify-content: center; text-align:center">
+    <fieldset>
+        <form asp-action="NoOfPassengers">
+            <div style="text-align:center">
+                <label for="id" style="display:inline-block" class="col-form-label">Schedule ID:</label>
+                <input type="text" name="scheduleID" id="scheduleID" class="col-sm-3" value=@ViewData["Schedule"] readonly/><br />
+            </div>
+            <div style="text-align:center">
+                <label for="id" style="display:inline-block" class="col-form-label">Enter Number of Passengers:</label>
+                <select asp-items="@ViewData["Numbers"] as List<SelectListItem>" id="number" name="number" style="width:150px" class="col-sm-3"></select>
+            </div>
+            <div style="text-align: center;padding-top:10px" class="form-group">
+                <input type="submit" value="Confirm" class="myButton" />
+            </div>
+        </form>
+    </fieldset>
+</div>

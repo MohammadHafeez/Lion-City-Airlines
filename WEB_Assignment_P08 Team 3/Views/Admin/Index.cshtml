@@ -1,0 +1,30 @@
+﻿<div class="container-fluid admin-index">
+    <h2>Welcome @TempData["adminName"] what would you like to do?</h2>
+    <div class="row row-1 justify-content-center">
+        <div class="col-12 col-md-4 ">
+            <img src="~/images/Schedule.svg" />
+            <h3>Route & Scheduling</h3>
+            <div>
+                <ol>
+                    <li><a href="~/FlightRoute/Index">View Route & Schedules</a></li>
+                    <li><a href="~/FlightRoute/Create">Create Flight Route</a></li>
+                    <li><a href="~/FlightSchedule/Create">Create Flight Schedule</a></li>
+                    <li><a href="~/FlightSchedule/Edit">Update Flight Schedule</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <a href="#">
+                <img src="~/images/group.svg" />
+            </a>
+            <h3>Personnel Options</h3>
+            <div>
+                <ol>
+                    <li><a asp-controller="Staff" asp-action="Index">View Personnel Schedule</a></li>
+                    <li><a asp-controller="Staff" asp-action="Create">Add New Flight Personnel</a></li>
+                    <li><a href="~/Staff/DisplaySchedule">Assign Flight Personnel</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

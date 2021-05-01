@@ -1,0 +1,84 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.DetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container route-details">
+    <h4>Flight Route @Model.FlightRoute.RouteId Details</h4>
+    <hr />
+    <div class="row row-1 justify-content-center">
+        <div class="col-12 col-sm-5">
+            <span class="label" >Departure Country: </span>
+            <span class="value">@Model.FlightRoute.DepartureCountry</span>
+        </div>
+        <div class="col-12 col-sm-5">
+            <span class="label">Departure City: </span>
+            <span class="value">@Model.FlightRoute.DepartureCity</span>
+        </div>
+    </div>
+    <hr />
+    <div class="row row-2 justify-content-center" >
+        <div class="col-12 col-sm-5">
+            <span class="label">Arrival Country: </span>
+            <span class="value">@Model.FlightRoute.ArrivalCountry</span>
+        </div>
+        <div class="col-12 col-sm-5">
+            <span class="label">Arrival City: </span>
+            <span class="value">@Model.FlightRoute.ArrivalCity</span>
+        </div>
+    </div>
+    <hr />
+    <div class="row row-3">
+        <div style="text-align: center;" class="col-12">
+            <span class="label">Flight Duration: </span>
+            <span class="value">@Model.FlightRoute.FlightDuration hour(s)</span>
+        </div>
+    </div>
+    <div class="row-4">
+        <div class="top" >
+            <h4 style="margin-right: 5px;" >Schedules Assigned to Flight Route @Model.FlightRoute.RouteId</h4>
+            <a style="margin-left: 5px;" class="btn btn-dark" asp-action="Create" asp-controller="FlightSchedule" asp-route-id="@Model.FlightRoute.RouteId">Create</a>
+        </div>
+        <hr />
+        @if (Model.flightScheduleList.Count != 0)
+        {
+            <div class="table-responsive" style="margin-top: 35px;">
+                <table id="viewStaff" class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ScheduleID</th>
+                            <th>FlightNumber</th>
+                            <th>RouteID</th>
+                            <th>AirCraftID</th>
+                            <th>Departure Date/Time</th>
+                            <th>Arrival Date/Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model.flightScheduleList)
+                        {
+                            <tr>
+                                <td>@i.ScheduleId</td>
+                                <td>@i.FlightNumber</td>
+                                <td>@i.RouteId</td>
+                                <td>@i.AircraftId</td>
+                                <td>@i.DepartureDateTime</td>
+                                <td>@i.ArrivalDateTime</td>
+                                <td>@i.Status</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div style="text-align: center;">
+                <span style="color:red">No record found!</span>
+            </div>
+        }
+        <a asp-action="Index" asp-controller="FlightRoute" >Return to table</a>
+    </div> 
+</div>

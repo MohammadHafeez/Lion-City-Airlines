@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.ScheduleViewModel>
+
+@{
+    ViewData["Title"] = "Make a Booking";
+}
+
+<h4>Choose your flight</h4>
+<partial name="~/Views/FlightBooking/_ViewFlights.cshtml" model="@Model" />
+<div style="display: flex; justify-content: left;">
+    <div>
+        <form method="post" action="~/FlightBooking/ChooseFlight">
+            <div>
+                <label for="id" style="display:inline-block" class="col-form-label">Choose Schedule ID of flight:</label>
+                <select asp-items="@ViewData["IdList"]as List<SelectListItem>" id="scheduleID" name="scheduleID" style="display:inline-block;width:100px"></select>
+                <input type="submit" value="Enter" style="display:inline-block" class="btn btn-dark" />
+            </div>
+        </form>
+    </div>
+</div>

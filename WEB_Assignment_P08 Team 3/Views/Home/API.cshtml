@@ -1,0 +1,101 @@
+﻿@model WEB_Assignment_P08_Team_3.Models.APIViewModel
+
+@{
+    ViewData["Title"] = "Covid Advisory";
+}
+
+<div class="container-fluid home-api">
+    <h2>Global Covid 19 Dashboard</h2>
+    <hr />
+    <div class="wrapper">
+        <div class="today">
+            <h5>Today's Report</h5>
+            <div class="row row-1 justify-content-around">
+                <div class="col-5 col-md-12">
+                    <p>Total Cases</p>
+                    <hr />
+                    <b class="text-warning">@Model.Global.TotalConfirmed</b>
+                </div>
+                <div class="col-5 col-md-12">
+                    <p>New Cases</p>
+                    <hr />
+                    <b style="color: #ff8784">@Model.Global.NewConfirmed</b>
+                </div>
+                <div class="col-5 col-md-12">
+                    <p>Total Deaths</p>
+                    <hr />
+                    <b class="text-warning">@Model.Global.TotalDeaths</b>
+                </div>
+                <div class="col-5 col-md-12">
+                    <p>New Deaths</p>
+                    <hr />
+                    <b style="color: #ff8784">@Model.Global.NewDeaths</b>
+                </div>
+                <div class="col-5 col-md-12">
+                    <p>Total Recoveries</p>
+                    <hr />
+                    <b class="text-warning">@Model.Global.TotalRecovered</b>
+                </div>
+                <div class="col-5 col-md-12">
+                    <p>New Recoveries</p>
+                    <hr />
+                    <b style="color: #09BC8A;">@Model.Global.NewConfirmed</b>
+                </div>
+            </div>
+        </div><hr />
+        <div class="countries">
+            <div class="inner" >
+                <h3>Top 5 Infected Countries</h3><hr>
+                <div class="row row-2 justify-content-around box">
+                    @foreach (var item in Model.Top5Countries.ToList())
+                    {
+                        <div class="col-12 col-md-4 col-lg-2 inner-box">
+                            <div>
+                                <p style="text-transform: capitalize; text-align: center; color: #164e87">@item.Slug</p>
+                            </div>
+                            <hr />
+                            <div>
+                                <p>Total Confirmed</p>
+                                <b>@item.TotalConfirmed</b>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <p>New Cases</p>
+                                <b style="color: #ff8784">↑ @item.NewConfirmed</b>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <p>Total Deaths</p>
+                                <b style="color: #ff8784" >@item.TotalDeaths</b>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div><hr />
+            <div class="inner" style="margin-top: 25px;">
+                <h3>Safe Countries To Visit</h3><hr>
+                <div class="row row-2 justify-content-around box">
+                    @foreach (var item in Model.Bottom5Countries.ToList())
+                    {
+                        <div class="col-12 col-md-4 col-lg-2 inner-box">
+                            <div>
+                                <p style="text-transform: capitalize; text-align: center; color: #164e87">@item.Slug</p>
+                            </div>
+                            <hr />
+                            <div>
+                                <p>Total Confirmed</p>
+                                <b>@item.TotalConfirmed</b>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <p>New Cases</p>
+                                <b style="color: #ff8784">↑ @item.NewConfirmed</b>
+                            </div>
+                            <div style="margin-top: 10px;">
+                                <p>Total Deaths</p>
+                                <b style="color: #ff8784" >@item.TotalDeaths</b>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@model IEnumerable<WEB_Assignment_P08_Team_3.Models.FlightRoute>
+@{
+    ViewData["Title"] = "View Routes & Schedules";
+}
+
+<div class="container route-index">
+    <div>
+        <h2>Flight Routes</h2>
+        <a href="~/FlightRoute/Create" class="btn btn-dark">Create Route</a>
+    </div>
+    <hr />
+    <partial name="~/Views/FlightRoute/_ViewRoute.cshtml" model="Model" />
+    <a href="~/Admin/Index">Back to Main Page</a>
+</div>

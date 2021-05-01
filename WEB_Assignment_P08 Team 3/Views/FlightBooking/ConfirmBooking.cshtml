@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Booking Summary";
+}
+
+<h4>Make a Booking</h4>
+<body>
+    <header style="text-align:center">Booking Summary</header>
+    <fieldset class="myCustomFieldset">
+        <div style="margin:auto; justify-content: center;">
+            <div style="padding-top: 20px;text-align: left; margin: auto; width: 500px">
+                <label style="width: 250px;"><b>Schedule ID:</b></label>
+                <span>@ViewData["ScheduleID"]</span>
+            </div>
+            <div style="padding-top: 20px;margin:auto;text-align: left;width:500px">
+                <label style="width: 250px;"><b>No of Passengers:</b></label>
+                <span>@ViewData["NoOfPassengers"]</span>
+            </div>
+            <div style="padding-top: 20px;margin:auto;text-align: left;width:500px">
+                <label style="width: 250px;"><b>Seat Class:</b></label>
+                <span>@ViewData["Economy"]</span><br />
+                <span style="padding-top: 5px;padding-left:253px;margin:auto;text-align: left;width:500px">@ViewData["Business"]</span>
+            </div>
+            <div style="padding-top: 20px;margin:auto;text-align: left;width:500px">
+                <label style="width: 250px;"><b>Total Price:</b></label>
+                <span>@ViewData["Price"]</span>
+            </div>
+        </div>
+    </fieldset>
+</body>
